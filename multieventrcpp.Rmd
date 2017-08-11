@@ -1,0 +1,14 @@
+---
+title: "Multievent capture-recapture with Rcpp"
+author: "Olivier Gimenez"
+date: "August 11, 2017"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+Rcpp::sourceCpp('multievent.cpp')
+```
