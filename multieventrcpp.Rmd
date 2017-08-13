@@ -9,6 +9,16 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+
+Download the 'multievent.cpp' and 'titi2.txt' files. This code implements the matrix product by hand.
 ```{r}
 Rcpp::sourceCpp('multievent.cpp')
 ```
+The Rcpp code is `r res2$median[1]/res2$median[2]` times faster than basic R.
+
+Following the advice of both Dirk Eddelbuettel and Romain Francois, I have switched to RcppArmadillo to rely on 'the matrix code by professionals and decades of testing (LAPACK and BLAS)'.
+```{r}
+Rcpp::sourceCpp('multieventarmadillo.cpp')
+```
+
+Now the RcppArmadillo code is `r res2$median[1]/res2$median[2]` times faster than basic R!!
